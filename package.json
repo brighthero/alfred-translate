@@ -1,0 +1,23 @@
+{
+  "name": "alfred-translate",
+  "version": "1.0.0",
+  "description": "Translate any phrase into a desired language",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brighthero/alfred-translate.git"
+  },
+  "keywords": [
+    "alfred",
+    "alfred-workflow"
+  ],
+  "author": "brighthero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brighthero/alfred-translate/issues"
+  },
+  "homepage": "https://github.com/brighthero/alfred-translate#readme"
+}
