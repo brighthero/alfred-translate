@@ -7,7 +7,21 @@
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
-	<dict/>
+	<dict>
+		<key>4DEF61C8-F30D-4947-BC95-853788A97796</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6D69EEDE-29AD-4126-B48E-D70C56AA496C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
 	<key>createdby</key>
 	<string>brighthero 2017</string>
 	<key>description</key>
@@ -61,6 +75,23 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>6D69EEDE-29AD-4126-B48E-D70C56AA496C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -70,6 +101,13 @@
 		<dict>
 			<key>xpos</key>
 			<integer>120</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>6D69EEDE-29AD-4126-B48E-D70C56AA496C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>420</integer>
 			<key>ypos</key>
 			<integer>160</integer>
 		</dict>
