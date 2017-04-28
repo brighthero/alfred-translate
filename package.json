@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/brighthero/alfred-translate/issues"
   },
-  "homepage": "https://github.com/brighthero/alfred-translate#readme"
+  "homepage": "https://github.com/brighthero/alfred-translate#readme",
+  "dependencies": {
+    "alfy": "^0.6.0",
+    "alfy-test": "^0.3.0",
+    "google-translate-api": "^2.2.2"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1"
+  }
 }
