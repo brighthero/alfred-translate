@@ -26,11 +26,8 @@ const query = alfy.input.replace(input && input[0] ? input[0] : '', '');
 let output = [];
 
 if (query !== '') {
-	const fn = async(val, i) => {
-		const res = await translate(query, {
-			from,
-			to: val
-		})
+	async function fn(val, i) {
+		const res = await translate(query, { from, to: val });
 
 		output[i] = {
 			title: res.text,
@@ -43,9 +40,8 @@ if (query !== '') {
 	};
 
 	var actions = to.map(fn);
-	var results = Promise.all(actions);
-	results.then(() => {
-		alfy.output(output);
-	});
-
+	var results = Promise.all(actions)
+		.then(() => {
+			alfy.output(output);
+		});
 }
