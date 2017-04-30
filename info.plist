@@ -100,16 +100,16 @@
 		<key>4DEF61C8-F30D-4947-BC95-853788A97796</key>
 		<dict>
 			<key>xpos</key>
-			<integer>120</integer>
+			<integer>260</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>20</integer>
 		</dict>
 		<key>6D69EEDE-29AD-4126-B48E-D70C56AA496C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>420</integer>
+			<integer>510</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>20</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
