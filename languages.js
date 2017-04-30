@@ -105,4 +105,6 @@ var langs = {
     'zu': 'Zulu'
 };
 
+langs.code = Object.getOwnPropertyNames(langs);
+
 module.exports = langs;
