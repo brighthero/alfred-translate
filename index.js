@@ -28,7 +28,7 @@ let output = [];
 const query = alfy.input.replace(langArr && langArr[0] ? langArr[0] : '', '');
 
 if (query !== '') {
-	to.forEach(async(val, i) => {
+	const fn = async(val, i) => {
 		const res = await translate(query, {
 			from,
 			to: val
@@ -42,21 +42,12 @@ if (query !== '') {
 				path: '/Users/matthias/Downloads/deu.png'
 			}
 		};
+	};
 
-		if (to.length == output.length) done();
+	var actions = to.map(fn);
+	var results = Promise.all(actions);
+	results.then(() => {
+		alfy.output(output);
 	});
-} else {
-	output.push({
-		title: 'No text input',
-		subtitle: 'Please enter the text you want to get translated!',
-		arg: ''
-	});
-}
 
-function done() {
-	output = output.filter(Boolean); 
-	//console.log(from, to);
-	//console.log(output);
-
-	alfy.output(output);
 }
