@@ -28,21 +28,22 @@ let output = [];
 const query = alfy.input.replace(langArr && langArr[0] ? langArr[0] : '', '');
 
 if (query !== '') {
-	to.forEach((val, i) => {
-		translate(query, {
+	to.forEach(async(val, i) => {
+		const res = await translate(query, {
 			from,
 			to: val
-		}).then(res => {
-			// console.log(res);
-			output.push({
-				title: res.text,
-				subtitle: res.from.text.value,
-				arg: res.text
-			});
-			if (to.length == output.length) done();
-		}).catch(err => {
-			console.error(err);
-		});
+		})
+
+		output[i] = {
+			title: res.text,
+			subtitle: `Lang:${langs[to[i]]}, AC:${res.from.text.value}`,
+			arg: res.text,
+			icon: {
+				path: '/Users/matthias/Downloads/deu.png'
+			}
+		};
+
+		if (to.length == output.length) done();
 	});
 } else {
 	output.push({
@@ -53,6 +54,7 @@ if (query !== '') {
 }
 
 function done() {
+	output = output.filter(Boolean); 
 	//console.log(from, to);
 	//console.log(output);
 
