@@ -6,14 +6,12 @@ const langs = require('./languages.js');
 // default lang settings
 let from = 'auto';
 let to = ['en', 'fr', 'es', 'de', 'zh-cn', 'ja'];
-
-const langParse = new RegExp("^(" + langs.code.join('|') + ")(?::(" + langs.code.join('|') + "))?\\s");
-const langArr = alfy.input.match(langParse);
+const input = alfy.input.match(new RegExp("^(" + langs.code.join('|') + ")(?::(" + langs.code.join('|') + "))?\\s?"));
 
 // Parse lang selection
-if (langArr) {
+if (input) {
 	to = [];
-	const parseArr = langArr[0].split(':');
+	const parseArr = input[0].split(':');
 	to[0] = parseArr[0].replace(/\s/g, "");
 
 	if (parseArr[1]) {
@@ -22,10 +20,10 @@ if (langArr) {
 	}
 }
 
-let output = [];
-
 // Parse query input
-const query = alfy.input.replace(langArr && langArr[0] ? langArr[0] : '', '');
+const query = alfy.input.replace(input && input[0] ? input[0] : '', '');
+
+let output = [];
 
 if (query !== '') {
 	const fn = async(val, i) => {
