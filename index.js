@@ -31,12 +31,20 @@ if (query !== '') {
 
 		output[i] = {
 			title: res.text,
-			subtitle: `Lang:${langs[to[i]]}, AC:${res.from.text.value}`,
+			subtitle: `${langs[to[i]]} - AC:${res.from.text.value}`,
 			arg: res.text,
 			icon: {
 				path: '/Users/matthias/Downloads/deu.png'
+			},
+			meta: {
+				fromlang: from,
+				tolang: val
 			}
 		};
+
+		if (res.from.text.value) {
+			output[i].autocomplete = input[0] + res.from.text.value.replace('[', '').replace(']', '');
+		}
 	};
 
 	var actions = to.map(fn);
