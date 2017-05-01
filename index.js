@@ -29,10 +29,13 @@ if (query !== '') {
 	async function fn(val, i) {
 		const res = await translate(query, { from, to: val });
 
+		// TODO: Fix null values in translate response		
+		const text = res.text.replace('null', '');
+
 		output[i] = {
-			title: res.text,
+			title: text,
 			subtitle: `${langs[to[i]]} - AC:${res.from.text.value}`,
-			arg: res.text,
+			arg: text,
 			icon: {
 				path: '/Users/matthias/Downloads/deu.png'
 			},
