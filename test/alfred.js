@@ -44,3 +44,17 @@ test('dont auto-complete suggestions', async t => {
 
 	t.falsy(result[0].autocomplete);
 });
+
+test('use flag icon', async t => {
+	const alfy = alfyTest();
+	const result = await alfy('de einfach');
+
+	t.true(result[0].icon.path.indexOf('/flags/assets/de.png') !== -1);
+});
+
+test('use default flag icon when correct not available', async t => {
+	const alfy = alfyTest();
+	const result = await alfy('lo einfach');
+
+	t.false(result[0].icon.path.indexOf('/flags/assets/lo.png') !== -1);
+});
