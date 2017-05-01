@@ -2,6 +2,7 @@ const alfy = require('alfy');
 const translate = require('google-translate-api');
 
 const langs = require('./languages.js');
+const flags = require('./flags');
 
 // default lang settings
 let from = 'auto';
@@ -37,7 +38,7 @@ if (query !== '') {
 			subtitle: `${langs[to[i]]} - AC:${res.from.text.value}`,
 			arg: text,
 			icon: {
-				path: '/Users/matthias/Downloads/flags-normal/za.png'
+				path: flags(to[i])
 			},
 			meta: {
 				fromlang: from,
