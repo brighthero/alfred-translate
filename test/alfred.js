@@ -57,4 +57,5 @@ test('use default flag icon when correct not available', async t => {
 	const result = await alfy('lo einfach');
 
 	t.false(result[0].icon.path.indexOf('/flags/assets/lo.png') !== -1);
+	t.true(result[0].icon.path.indexOf('/icon.png') !== -1);
 });
