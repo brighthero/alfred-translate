@@ -37,7 +37,7 @@ if (query !== '') {
 			subtitle: `${langs[to[i]]} - AC:${res.from.text.value}`,
 			arg: text,
 			icon: {
-				path: '/Users/matthias/Downloads/deu.png'
+				path: '/Users/matthias/Downloads/flags-normal/za.png'
 			},
 			meta: {
 				fromlang: from,
